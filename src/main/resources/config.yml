@@ -1,0 +1,28 @@
+world: world
+center:
+  x: 0.0
+  z: 0.0
+initial-size: 800.0
+min-players: 2
+countdown: 15
+
+ring:
+  damage-buffer: 2.0
+  warning-distance: 10
+  phases:
+    - { wait: 120, shrink: 90, size: 500.0, damage: 1.0 }
+    - { wait: 90, shrink: 75, size: 280.0, damage: 2.0 }
+    - { wait: 60, shrink: 60, size: 140.0, damage: 3.0 }
+    - { wait: 45, shrink: 45, size: 60.0, damage: 5.0 }
+    - { wait: 30, shrink: 30, size: 20.0, damage: 8.0 }
+
+anomalies:
+  spawn-interval: 25
+  max-active: 6
+  duration: 40
+  base-count: 1
+  per-phase: 1
+  weights: { low-gravity: 4, ice: 3, meteor: 3 }
+  low-gravity: { radius: 12.0, jump-amplifier: 4 }
+  ice: { radius: 8.0 }
+  meteor: { radius: 14.0, chance: 0.6, yield: 1.6 }
